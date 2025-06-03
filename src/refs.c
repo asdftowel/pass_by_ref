@@ -46,7 +46,9 @@ int main(void) {
     len = strlen(memcpy(example, THE_STRING, sizeof THE_STRING));
     srand((unsigned int)time(NULL)); /* -Wconversion */
     if (puts(*odd_a(rand_lower(&example, &len), &len)) == EOF) {
+        free(example);
         return EXIT_FAILURE;
     }
+    free(example);
     return EXIT_SUCCESS;
 }
